@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "author": "github.com/InfiSupaSta",
+  "name": "Page title and url saver",
+  "version": "0.1",
+  "description": "Just title and url saver to local file for future using.",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "script.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "script.js"
+      ]
+    }
+  ]
+}
