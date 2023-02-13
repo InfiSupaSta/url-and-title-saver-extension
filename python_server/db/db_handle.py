@@ -7,18 +7,20 @@ from .link import Link
 BASE_DIR = pathlib.Path(__file__).parent.parent.parent
 CUR_DIR = pathlib.Path(__file__).parent
 
+DEFAULT_DB_NAME = 'db.sqlite3'
+
 
 class DatabasePreparation:
 
     def __init__(
             self,
             *,
-            db_name: str = BASE_DIR.joinpath('db.sqlite3')
+            db_name: str = BASE_DIR.joinpath(DEFAULT_DB_NAME)
     ):
         self.db_name = db_name
         self.init_sql = 'init.sql'
 
-    def get_init_sql(self):
+    def _get_init_sql(self):
         with open(CUR_DIR.joinpath(self.init_sql)) as sql:
             yield sql.read()
 
@@ -27,7 +29,7 @@ class DatabasePreparation:
 
     def create_db(self):
         connect = self.get_db_connect()
-        sql = self.get_init_sql()
+        sql = self._get_init_sql()
         connect.execute(
             next(sql)
         )

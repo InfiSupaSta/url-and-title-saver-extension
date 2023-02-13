@@ -1,4 +1,4 @@
-Chrome extension for storing page title and url in any storage on your PC. 
+Browser extension for storing page title and url in any storage on your PC. 
 Store options can be modified in the future.
 
 __Purpose of this mini-project as-is:__
@@ -42,11 +42,12 @@ _For starting server:_
 
 host and port are optional - by default its __localhost__ and __56789__
 
-_For adding extension_: go to chrome extensions page, activate developer mode,
+_For adding extension_: go to browser extensions page, activate developer mode,
 choose upload unpacked extension and provide path to this project directory.
 
-If all above goes smoothly, now you can use it. For saving url and title use 
-the following keys combination:
+If all steps above went smoothly then you can use extension. 
+For saving url and title use the following keys combination:
+
 __ctrl__ + __alt__ + __spacebar__
 
 If you did not change writers that used by default on the backend, two files 
